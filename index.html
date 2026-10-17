@@ -69,20 +69,72 @@
 
     <section class="how" id="nasil" aria-labelledby="how-title">
       <h2 id="how-title">Nasıl çalışır</h2>
-      <ol class="steps">
-        <li>
-          <h3>Her zamanki gibi kopyala</h3>
-          <p>Pano arka planda bekler; kopyaladığın her şeyi hangi uygulamadan geldiğiyle birlikte kaydeder. Aynı şeyi ikinci kez kopyalarsan yeni kart açmaz, eskisini öne alır.</p>
-        </li>
-        <li>
-          <h3>Kısayola bas</h3>
-          <p>Panel ekranın altından açılır. Yazmaya başladığın an arama başlar; görsellerin içindeki yazı da aranır.</p>
-        </li>
-        <li>
-          <h3>Seç ve yapıştır</h3>
-          <p>Ok tuşlarıyla kartı seç, Enter'a bas. Pano onu doğrudan çalıştığın uygulamaya yapıştırır. Biçimsiz istiyorsan Shift+Enter.</p>
-        </li>
-      </ol>
+      <div class="how-grid">
+        <ol class="steps" id="how-steps">
+          <li data-step="0">
+            <button type="button" class="step-btn">
+              <h3>Her zamanki gibi kopyala</h3>
+              <p>Pano arka planda bekler; kopyaladığın her şeyi hangi uygulamadan geldiğiyle birlikte kaydeder.</p>
+              <span class="bar" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li data-step="1">
+            <button type="button" class="step-btn">
+              <h3>Kısayola bas, aramaya başla</h3>
+              <p>Panel ekranın altından açılır. Yazdığın an kartlar süzülür; görsellerin içindeki yazı da aranır.</p>
+              <span class="bar" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li data-step="2">
+            <button type="button" class="step-btn">
+              <h3>Enter ile yapıştır</h3>
+              <p>Seçili kart doğrudan çalıştığın uygulamaya yapışır. Biçimsiz istersen Shift+Enter.</p>
+              <span class="bar" aria-hidden="true"></span>
+            </button>
+          </li>
+        </ol>
+
+        <!-- Animasyonlu sahne: notlardan kopyala, e-postaya yapıştır -->
+        <div class="stage" id="stage" aria-hidden="true">
+          <div class="win win-notes" id="w-notes">
+            <div class="win-bar"><i></i><i></i><i></i><span>Notlar</span></div>
+            <div class="win-body">
+              <b>Toplantı notları</b>
+              <p>Perşembe 14.00 tedarikçi görüşmesi.</p>
+              <p class="pick"><span class="sel" id="sel"></span><span id="pick-text">Güncel fiyat teklifini 20 Ekim'e kadar gönder.</span></p>
+              <p>Numune kargosu yolda.</p>
+            </div>
+          </div>
+          <div class="win win-mail" id="w-mail">
+            <div class="win-bar"><i></i><i></i><i></i><span>Yeni e-posta</span></div>
+            <div class="win-body">
+              <div class="field"><span>Kime</span>ahmet@ornek.com</div>
+              <div class="field"><span>Konu</span>Teklif hakkında</div>
+              <p>Merhaba Ahmet Bey,</p>
+              <p class="typed"><span id="typed"></span><i class="caret" id="caret"></i></p>
+            </div>
+          </div>
+
+          <div class="mini-panel" id="mini">
+            <div class="mini-bar">
+              <span class="mini-search"><svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><span id="mini-q"></span><i class="caret"></i></span>
+              <span class="mini-tab">Pano Geçmişi</span>
+            </div>
+            <div class="mini-strip" id="mini-strip">
+              <div class="mc mc-new" id="mc-new" style="--hc:#F2B300;--hf:#2A2100"><em>Metin</em><small>Şimdi</small><p>Güncel fiyat teklifini 20 Ekim'e kadar gönder.</p></div>
+              <div class="mc" style="--hc:#2E73FF"><em>Bağlantı</em><small>4 dk. önce</small><span class="mc-cover"></span></div>
+              <div class="mc" style="--hc:#E5484D"><em>Renk</em><small>9 dk. önce</small><span class="mc-swatch"></span></div>
+              <div class="mc" style="--hc:#30A46C"><em>Metin</em><small>1 sa. önce</small><p>Numune için adres: Atatürk Cad. No 12</p></div>
+            </div>
+          </div>
+
+          <div class="dock"><span class="dock-app"></span><span class="dock-app"></span><span class="dock-pano" id="tray"><img src="assets/pano-512.png" alt=""></span></div>
+
+          <div class="chip" id="chip">Güncel fiyat teklifini 20 Ekim'e kadar gönder.</div>
+          <div class="keyshow" id="keyshow"></div>
+          <svg class="pointer" id="pointer" viewBox="0 0 24 24"><path d="M5 3.5v15.2l4.1-3.9 2.7 6.1 2.6-1.1-2.7-6h5.8Z"/></svg>
+        </div>
+      </div>
     </section>
 
     <section class="features" aria-labelledby="features-title">
@@ -199,5 +251,6 @@
   </footer>
 
   <script src="app.js"></script>
+  <script src="how.js"></script>
 </body>
 </html>
