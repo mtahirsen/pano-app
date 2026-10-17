@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pano — kopyaladığın her şey, bir tuş uzağında</title>
+  <meta name="description" content="Pano, macOS ve Windows için ücretsiz pano geçmişi uygulaması. Kopyaladığın her şeyi saklar; tek kısayolla bul, seç ve yapıştır. Verilerin bilgisayarında kalır.">
+  <meta property="og:title" content="Pano">
+  <meta property="og:description" content="Kopyaladığın her şey, bir tuş uzağında. macOS ve Windows için ücretsiz pano geçmişi.">
+  <meta property="og:image" content="https://mtahirsen.github.io/pano-app/assets/pano-512.png">
+  <meta name="theme-color" content="#6A00DB">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#indir">İndirmeye geç</a>
+
+  <header class="top">
+    <a class="brand" href="#" aria-label="Pano ana sayfa">
+      <img src="assets/pano-512.png" alt="" width="32" height="32">
+      <span>Pano</span>
+    </a>
+    <nav aria-label="Sayfa içi">
+      <a href="#nasil">Nasıl çalışır</a>
+      <a href="#kisayollar">Kısayollar</a>
+      <a href="#gizlilik">Gizlilik</a>
+      <a class="nav-cta" href="#indir">İndir</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero: ürünün kendisi. Panel sayfanın altından kayarak gelir ve canlıdır. -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">Kopyaladığın her şey, bir tuş uzağında.</h1>
+        <p class="lede">Pano, kopyaladığın metinleri, bağlantıları, görselleri ve dosyaları saklar. Bir kısayola bas, aradığını bul, öndeki uygulamaya yapıştır. macOS ve Windows'ta, ücretsiz.</p>
+        <div class="cta-row">
+          <a class="btn primary" id="cta-main" href="#indir">Pano'yu indir</a>
+          <span class="cta-note" id="cta-note">macOS 14+ ve Windows 10/11</span>
+        </div>
+        <p class="try">
+          Dene: bu sayfadan bir cümle seçip kopyala, sonra
+          <span class="keys" data-os-keys="open"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>V</kbd></span>
+          ile paneli aç.
+        </p>
+      </div>
+
+      <div class="desk" aria-hidden="false">
+        <div class="panel" id="panel" role="region" aria-label="Pano paneli (canlı demo)" tabindex="-1">
+          <div class="panel-bar">
+            <label class="search">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg>
+              <input id="search" type="search" placeholder="Ara" autocomplete="off" aria-label="Kartlarda ara">
+            </label>
+            <div class="tabs" role="tablist" aria-label="Pinboard'lar">
+              <button role="tab" aria-selected="true" data-tab="all">Pano Geçmişi</button>
+              <button role="tab" aria-selected="false" data-tab="is"><i style="--dot:#34C759"></i>İş</button>
+              <button role="tab" aria-selected="false" data-tab="kod"><i style="--dot:#AF52DE"></i>Kod parçaları</button>
+            </div>
+          </div>
+          <ol class="strip" id="strip" aria-live="polite"></ol>
+          <div class="toast" id="toast" role="status"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how" id="nasil" aria-labelledby="how-title">
+      <h2 id="how-title">Nasıl çalışır</h2>
+      <ol class="steps">
+        <li>
+          <h3>Her zamanki gibi kopyala</h3>
+          <p>Pano arka planda bekler; kopyaladığın her şeyi hangi uygulamadan geldiğiyle birlikte kaydeder. Aynı şeyi ikinci kez kopyalarsan yeni kart açmaz, eskisini öne alır.</p>
+        </li>
+        <li>
+          <h3>Kısayola bas</h3>
+          <p>Panel ekranın altından açılır. Yazmaya başladığın an arama başlar; görsellerin içindeki yazı da aranır.</p>
+        </li>
+        <li>
+          <h3>Seç ve yapıştır</h3>
+          <p>Ok tuşlarıyla kartı seç, Enter'a bas. Pano onu doğrudan çalıştığın uygulamaya yapıştırır. Biçimsiz istiyorsan Shift+Enter.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="features" aria-labelledby="features-title">
+      <h2 id="features-title">Küçük ama düşünülmüş</h2>
+      <div class="feature-list">
+        <article class="feature wide">
+          <div class="feature-text">
+            <h3>Pinboard'lar</h3>
+            <p>Sık kullandığın imzaları, adresleri, kod parçalarını renkli panolara sabitle. Geçmiş temizlense de onlar yerinde kalır.</p>
+          </div>
+          <div class="mini-boards" aria-hidden="true">
+            <span style="--c:#34C759">İş</span><span style="--c:#AF52DE">Kod parçaları</span><span style="--c:#FF9500">Adresler</span><span style="--c:#007AFF">Müşteriye yanıtlar</span>
+          </div>
+        </article>
+        <article class="feature">
+          <h3>Her türü tanır</h3>
+          <p>Metin, bağlantı, renk kodu, görsel, dosya. Bağlantıların başlığını ve kapak görselini, renklerin örneğini kartın üstünde görürsün.</p>
+        </article>
+        <article class="feature">
+          <h3>Space ile önizle</h3>
+          <p>Uzun bir metni ya da görseli yapıştırmadan önce büyük hâliyle gör. Gerekirse Ctrl+E ile düzelt.</p>
+        </article>
+        <article class="feature">
+          <h3>Yanlışlıkla silmez</h3>
+          <p>Sildiğin kartı Ctrl+Z ile geri getir. Pinboard silmeden önce sorar.</p>
+        </article>
+        <article class="feature">
+          <h3>Biçimi korur</h3>
+          <p>Zengin metin, tablo hücreleri ve dosyalar kopyaladığın gibi geri gelir. Excel'den aldığın hücreler yine hücre olarak yapışır.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="shortcuts" id="kisayollar" aria-labelledby="sc-title">
+      <div class="sc-head">
+        <h2 id="sc-title">Klavyeden hiç kalkmadan</h2>
+        <div class="os-switch" role="radiogroup" aria-label="İşletim sistemi">
+          <button role="radio" aria-checked="false" data-os="mac">macOS</button>
+          <button role="radio" aria-checked="true" data-os="win">Windows</button>
+        </div>
+      </div>
+      <table class="sc-table">
+        <tbody id="sc-body"></tbody>
+      </table>
+    </section>
+
+    <section class="privacy" id="gizlilik" aria-labelledby="privacy-title">
+      <h2 id="privacy-title">Geçmişin senin bilgisayarında kalır</h2>
+      <div class="privacy-cols">
+        <p>Hesap yok, bulut yok, reklam yok, kullanım takibi yok. Pano'nun kaydettiği her şey bilgisayarındaki tek bir dosyada durur ve istediğin an silinir.</p>
+        <ul>
+          <li>Parola yöneticilerinden kopyalananlar kaydedilmez.</li>
+          <li>İstediğin uygulamayı tamamen yok sayabilirsin.</li>
+          <li>Geçmiş bir gün, bir hafta, bir ay ya da bir yıl sonra kendiliğinden silinir; süreyi sen seçersin.</li>
+          <li>Pano'nun internete çıktığı tek yer bağlantı önizlemesidir: kopyaladığın bağlantının başlığını ve görselini indirir. Ayarlardan kapatabilirsin. Parola sıfırlama ya da giriş bağlantısı gibi tek kullanımlık görünen adresleri hiç açmaz.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="download" id="indir" aria-labelledby="dl-title">
+      <h2 id="dl-title">İndir</h2>
+      <p class="dl-sub">Ücretsiz. Sürüm <span class="ver">1.0.0</span>.</p>
+      <div class="dl-grid">
+        <div class="dl-card" data-os-card="win">
+          <h3>Windows 10 ve 11</h3>
+          <a class="btn primary" href="https://github.com/mtahirsen/pano-app/releases/latest/download/Pano-Setup.exe">Windows için indir</a>
+          <p class="dl-size">Pano-Setup.exe, 55 MB. Yönetici izni istemez.</p>
+          <details>
+            <summary>“Windows bilgisayarınızı korudu” uyarısı çıkarsa</summary>
+            <p>Pano henüz ücretli bir kod imzalama sertifikasıyla imzalanmadığı için Windows SmartScreen ilk açılışta uyarır. <b>Ek bilgi</b>'ye, ardından <b>Yine de çalıştır</b>'a tıkla. Bu yalnızca bir kez sorulur.</p>
+          </details>
+        </div>
+        <div class="dl-card" data-os-card="mac">
+          <h3>macOS 14 ve sonrası</h3>
+          <a class="btn primary" href="https://github.com/mtahirsen/pano-app/releases/latest/download/Pano.dmg">Mac için indir</a>
+          <p class="dl-size">Pano.dmg, 2 MB. Apple Silicon ve Intel.</p>
+          <details>
+            <summary>“Pano açılamıyor” uyarısı çıkarsa</summary>
+            <p>Pano'yu Uygulamalar klasörüne sürükle ve bir kez açmayı dene. Uyarı çıkınca <b>Sistem Ayarları › Gizlilik ve Güvenlik</b>'e git, aşağıdaki <b>Yine de Aç</b> düğmesine bas. İlk yapıştırmada Pano Erişilebilirlik izni ister; bu izin olmadan seçtiğin kart yalnızca panoya kopyalanır.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Sık sorulanlar</h2>
+      <details>
+        <summary>Gerçekten ücretsiz mi?</summary>
+        <p>Evet. Abonelik, deneme süresi ya da sınır yok.</p>
+      </details>
+      <details>
+        <summary>Windows'un kendi pano geçmişinden (Win+V) farkı ne?</summary>
+        <p>Pano görselleri, dosyaları ve biçimli metni de saklar, kaynak uygulamayı gösterir, arama ve pinboard'lar sunar, geçmişi istediğin kadar tutar. Win+V'ye dokunmaz; ikisi birlikte çalışır.</p>
+      </details>
+      <details>
+        <summary>Kısayolu değiştirebilir miyim?</summary>
+        <p>Evet, Ayarlar › Kısayollar'dan. Varsayılanlar: Windows'ta Ctrl+Shift+V, macOS'ta ⇧⌘V.</p>
+      </details>
+      <details>
+        <summary>Nasıl kaldırırım?</summary>
+        <p>Windows'ta Ayarlar › Uygulamalar'dan Pano'yu kaldır; geçmişin de silinsin mi diye sorar. macOS'ta Pano'yu Uygulamalar'dan çöpe at; geçmiş ~/Library/Application Support/Pano klasöründedir.</p>
+      </details>
+      <details>
+        <summary>Bir hata buldum.</summary>
+        <p><a href="https://github.com/mtahirsen/pano-app/issues">GitHub'da bildir</a>. Windows'ta hata kaydı %APPDATA%\Pano\pano.log dosyasındadır; eklersen çok yardımcı olur.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <img src="assets/pano-512.png" alt="" width="28" height="28">
+    <p>Pano 1.0.0. Tahir Şen yaptı.</p>
+    <a href="https://github.com/mtahirsen/pano-app/releases">Tüm sürümler</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
